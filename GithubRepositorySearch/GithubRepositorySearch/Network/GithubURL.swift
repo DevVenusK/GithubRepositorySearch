@@ -10,9 +10,8 @@ import Foundation.NSURL
 public struct GithubURL: Sendable {
   public let wrappedValue: URL
   
-  // TODO: - Host 추가
   init?(_ rawValue: String) {
-    guard let url = URL(string: "" + rawValue) else { return nil }
+    guard let url = URL(string: "https://api.github.com" + rawValue) else { return nil }
     wrappedValue = url
   }
 }
