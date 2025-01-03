@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RepositorySearchRepositoryInterface: Sendable {
-  func search(_ reqeust: RepositorySearch) async throws -> RepositorySearchEntity
+  func search(_ reqeust: RepositorySearch) async throws -> RepositorySearchDTO
 }
 
 final class RepositorySearchRepository: RepositorySearchRepositoryInterface {
@@ -24,7 +24,7 @@ final class RepositorySearchRepository: RepositorySearchRepositoryInterface {
 }
 
 extension RepositorySearchRepository {
-  func search(_ reqeust: RepositorySearch) async throws -> RepositorySearchEntity {
+  func search(_ reqeust: RepositorySearch) async throws -> RepositorySearchDTO {
     guard let request = RepositorySearchRequest(
       paramters: [
         "q": reqeust.query.wrappedValue,
