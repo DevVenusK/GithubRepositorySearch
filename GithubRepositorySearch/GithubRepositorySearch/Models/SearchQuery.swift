@@ -9,7 +9,7 @@
  검색을 하기 위한 검색어 타입입니다.
  */
 public struct SearchQuery: Sendable {
-  static private let pattern: Regex = #/^[a-zA-Z0-9가-힣]+$/#
+  static nonisolated(unsafe) private let pattern: Regex = #/^[a-zA-Z0-9가-힣]+$/#
   public let wrappedValue: String
 
   /**

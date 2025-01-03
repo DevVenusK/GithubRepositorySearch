@@ -7,13 +7,13 @@
 
 import UIKit.UISearchController
 
-protocol SearchControllerType where Self: UISearchController {
+@MainActor protocol SearchControllerType where Self: UISearchController {
   func setDelegate(_ searchDelegate: some SearchController.SearchDelegate)
 }
 
 // MARK: - Search Delegate
 extension SearchController {
-  protocol SearchDelegate {
+  @MainActor protocol SearchDelegate {
     func search(_ searchQuery: SearchQuery)
   }
 }

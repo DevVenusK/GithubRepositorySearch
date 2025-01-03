@@ -32,6 +32,7 @@ final class ViewController: UIViewController {
 extension ViewController {
   struct Dependency {
     let searchController: SearchControllerType
+    let searchService: RepositorySearchService
   }
 }
 
